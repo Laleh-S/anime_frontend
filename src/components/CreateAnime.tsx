@@ -57,7 +57,7 @@ function CreateAnime() {
     updateInputValue(e.target.value)
     updateFormData({
       ...formData,
-      caption: e.target.value
+      // caption: e.target.value
     })
   }
   

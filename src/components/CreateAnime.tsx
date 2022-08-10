@@ -21,43 +21,37 @@ function CreateAnime() {
     producer: '',
     release_date: '',
     description: '',
-    
+    image: '',
+    // url:
   })
 
 
-  // function handleUpload() {
-  //   window.cloudinary.createUploadWidget(
-  //     {
-  //       cloudName: 'dy4gabnho', 
-  //       uploadPreset: 'zosc7ygt', 
-  //       cropping: true
-  //     },
+  function handleUpload() {
+    window.cloudinary.createUploadWidget(
+      {
+        cloudName: 'dy4gabnho', 
+        uploadPreset: 'zosc7ygt', 
+        cropping: true
+      },
 
-  //     (err, result) => {
-  //       if (result.event != 'success') {
-  //         return
-  //       } 
-  //       setFormData({
-  //         ...formData,
-  //         url: result.info.secure_url
+      (err, result) => {
+        if (result.event != 'success') {
+          return
+        } 
+        updateFormData({
+          ...formData,
+          // url: result.info.secure_url
           
-  //       })
-  //     }
-  //   ).open()
-  // }
-
-  // function handleImageChange(e: any) {
-  //   cloudinary.v2.uploader.upload(
-  //   ).then((result: any) => {
-      
-  //   })
-  // }
+        })
+      }
+    ).open()
+  }
 
   function handleImageChange(e: any) {
     updateInputValue(e.target.value)
     updateFormData({
       ...formData,
-      // caption: e.target.value
+
     })
   }
   
@@ -115,7 +109,7 @@ function CreateAnime() {
       <div className="container">
         <form onSubmit={handleSubmit}>
 
-          {['title', 'original_title', 'director', 'producer', 'release_date'].map((field) => {
+          {['title', 'original_title', 'director', 'producer', 'release_date', 'image'].map((field) => {
             return <div key={field} className="field">
               <label className="label">
                 {field.replace("_", " ").toUpperCase()}
@@ -144,20 +138,25 @@ function CreateAnime() {
               />
             </div>
           <div>
-          <input type="file" name="image" accept="image/png, image/jpeg" onChange={handleImageChange} />
-            {/* {button === true?
-              <div>
-                <button className="button" onClick={() => updateButton(!button)}>Back</button>
-                <button className="button" onClick={handleUpload}>Click to upload an image</button>
-              </div>
-        
-            } */}
-            
-          </div>
 
-            
-            <br/>
-            
+      {button === true ?
+        <div className="container">
+          <button className="button" onClick={() => updateButton(!button)}>Back</button>
+          <button className="button" onClick={handleUpload}>Click to upload an image</button>
+          <textarea
+            className="textarea is-primary"
+            placeholder='Your caption'
+            onChange={handleChange}
+            value={inputValue} />
+          <button className="button" onClick={handleSubmit}>Submit and return</button>
+        </div>
+        :
+        <div>
+          <button className="button" onClick={() => updateButton(!button)}>Click here to post a image</button>
+        </div>
+        }
+    </div>
+                      
           <button className="button mt-5 is-info">Submit</button>
         </form>
       </div>

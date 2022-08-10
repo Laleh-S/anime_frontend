@@ -7,7 +7,8 @@ export interface BasicAnimeInterface {
   director: string,
   producer: string,
   release_date: string,
-  description: string
+  description: string,
+  // url: string,
 }
 
 export interface AnimeInterface extends BasicAnimeInterface {

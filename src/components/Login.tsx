@@ -68,8 +68,8 @@ export default function Login() {
           </div>
         </div>
         <button className="button is-info is-rounded">Login</button>
-        <div className="register mt-2">
-        <h3 className=" has-text-weight-bold ">New user? <a href="register" className="has-text-weight-bold has-text-link ">register here</a></h3>
+        <div className="register mt-2 pt-3">
+        <h3 className=" has-text-weight-bold ">New user? <a href="register" className="has-text-weight-bold has-text-info ">register here</a></h3>
       </div>
       </form>
     </div>

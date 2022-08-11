@@ -9,12 +9,8 @@ import { getToken } from "../lib/auth"
 
 function CreateAnime() {
 
-  
   const navigate = useNavigate()
   
-  const [imageDisplay, updateImageDisplay] = useState("")
-  const [button, updateButton] = useState(false)
-  const [inputValue, updateInputValue] = useState('')
   const [formData, updateFormData] = useState<BasicAnimeInterface>({
     title: '',
     original_title: '',
@@ -23,42 +19,13 @@ function CreateAnime() {
     release_date: '',
     description: '',
     image: '',
-    // url:
   })
 
-
-  function handleUpload() {
-    window.cloudinary.createUploadWidget(
-      {
-        cloudName: 'dy4gabnho', 
-        uploadPreset: 'zosc7ygt', 
-        cropping: true
-      },
-
-      (err, result) => {
-        if (result.event != 'success') {
-          return
-        } 
-        updateFormData({
-          ...formData,
-          // url: result.info.secure_url
-          
-        })
-      }
-    ).open()
-  }
-
-  function handleImageChange(e: any) {
-    updateInputValue(e.target.value)
-    updateFormData({
-      ...formData,
-
-    })
-  }
   
   function handleChange(event: SyntheticEvent) {
     const input = event.target as HTMLInputElement
     const value = input.name === 'release_date' ? parseInt(input.value) : input.value
+    console.log(input.name, value)
     updateFormData({ 
       ...formData, 
       [input.name]: value,
@@ -69,17 +36,7 @@ function CreateAnime() {
   async function handleSubmit(event: SyntheticEvent) {
     event.preventDefault()
     
-    try {
-      const { data } = await axios.post('/api/anime', formData)
-      console.log(data)
-      updateButton(!button)
-    } catch (err) {
-      console.log(err)
-    }
-
-
     let mutableFormData = formData
-    mutableFormData['image'] = imageDisplay
     console.log('FORM DATA', formData)
     try {
       const { data } = await axios.post(
@@ -109,7 +66,6 @@ function CreateAnime() {
     <section className="section">
       <div className="container">
         <form onSubmit={handleSubmit}>
-
           {['title', 'original_title', 'director', 'producer', 'release_date', 'image'].map((field) => {
             return <div key={field} className="field">
               <label className="label">
@@ -138,27 +94,7 @@ function CreateAnime() {
               value={formData.description}
               />
             </div>
-          <div>
-
-      {button === true ?
-        <div className="container">
-          <button className="button" onClick={() => updateButton(!button)}>Back</button>
-          <button className="button" onClick={handleUpload}>Click to upload an image</button>
-          {/* <textarea
-            className="textarea is-primary"
-            placeholder='Your caption'
-            onChange={handleChange}
-            value={inputValue} /> */}
-          <button className="button" onClick={handleSubmit}>Submit and return</button>
-        </div>
-        :
-        <div>
-          <button className="button" onClick={() => updateButton(!button)}>Click here to post a image</button>
-        </div>
-        }
-    </div>
-                      
-          <button className="button mt-5 is-info">Submit</button>
+            <button className="button mt-5 is-info">Submit</button>
         </form>
       </div>
     </section>

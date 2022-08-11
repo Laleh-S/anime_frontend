@@ -38,7 +38,7 @@ export default function Login() {
     }
   }
 
-  return <div className="section">
+  return <div className="section-login">
     <div className="container-login">
     <p className="text has-text-danger is-size-3">Anime Cue</p>
     <br/>
@@ -47,7 +47,7 @@ export default function Login() {
           <label className="label">Email</label>
           <div className="control">
             <input
-              className="input"
+              className="input is-rounded"
               type="text"
               name={'email'}
               value={formData.email}
@@ -57,18 +57,22 @@ export default function Login() {
         </div>
         <div className="field">
           <label className="label">Password</label>
-          <div className="control">
+          <div className="control has-icons-right">
             <input
-              className="input"
+              className="input is-rounded"
               type="password"
               name={'password'}
               value={formData.password}
               onChange={handleChange}
-            />
+            />           
           </div>
         </div>
-        <button className="button is-info">Submit</button>
+        <button className="button is-info is-rounded">Login</button>
+        <div className="register mt-2">
+        <h3 className=" has-text-weight-bold ">New user? <a href="register" className="has-text-weight-bold has-text-link ">register here</a></h3>
+      </div>
       </form>
     </div>
+     
   </div>
 }

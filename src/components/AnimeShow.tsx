@@ -124,7 +124,7 @@ function AnimeShow() {
                   return <article key={comment.id} className="media">
                     <div className="media-content">
                       <div className="subtitle is-6 is-success">
-                        <p className="">
+                        <p className="user has-text-info">
                           
                           {comment.user.username} <span className="date"> date: </span> 
                           {comment.created_at.split("T")[0].split("-").slice(0).reverse().join(" ")}  

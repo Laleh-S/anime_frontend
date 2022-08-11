@@ -27,6 +27,30 @@
   transform: translate3D(0, -6px, 0);
 }
 
+.section-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid rgb(168, 166, 166);
+  margin: 150px 550px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 10px;
+}
+
+.section-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid rgb(168, 166, 166);
+  margin: 100px 500px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 10px;
+}
+
+
+
 
 
 

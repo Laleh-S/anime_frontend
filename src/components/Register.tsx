@@ -55,14 +55,16 @@ export default function Register() {
 
   console.log(errors)
 
-  return <div className="section">
+  return <div className="section-register">
     <div className="container">
-      <form onSubmit={handleSubmit}>
+      <form className="register-form" onSubmit={handleSubmit}>
+      <p className="text has-text-danger is-size-3">Anime Cue</p>
+    <br/>
         <div className="field">
           <label className="label">Username</label>
           <div className="control">
             <input
-              className="input"
+              className="input is-rounded "
               type="text"
               name={'username'} 
               // ! Adding these 2 fields means your component is 'controlled'. This is good practice!
@@ -77,7 +79,7 @@ export default function Register() {
           <label className="label">Email</label>
           <div className="control">
             <input
-              className="input"
+              className="input is-rounded"
               type="text"
               name={'email'}
               value={formData.email}
@@ -91,7 +93,7 @@ export default function Register() {
           <label className="label">Password</label>
           <div className="control">
             <input
-              className="input"
+              className="input is-rounded"
               type="password"
               name={'password'}
               value={formData.password}
@@ -105,7 +107,7 @@ export default function Register() {
           <label className="label">Confirm password</label>
           <div className="control">
             <input
-              className="input"
+              className="input is-rounded"
               type="password"
               name={'passwordConfirmation'}
               value={formData.passwordConfirmation}
@@ -115,7 +117,7 @@ export default function Register() {
             {errors.passwordConfirmation && <small className="has-text-danger">{errors.passwordConfirmation}</small>}
           </div>
         </div>
-        <button className="button is-info">Submit</button>
+        <button className="button is-info is-rounded">Register</button>
       </form>
     </div>
   </div>

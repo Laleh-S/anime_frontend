@@ -9,6 +9,7 @@ import { getToken } from "../lib/auth"
 
 function CreateAnime() {
 
+  
   const navigate = useNavigate()
   
   const [imageDisplay, updateImageDisplay] = useState("")
@@ -64,7 +65,7 @@ function CreateAnime() {
     })
   }
 
-    // ! Will call the fetchImage function & take user back to images
+    // Will call the fetchImage function & take user back to images
   async function handleSubmit(event: SyntheticEvent) {
     event.preventDefault()
     
@@ -143,11 +144,11 @@ function CreateAnime() {
         <div className="container">
           <button className="button" onClick={() => updateButton(!button)}>Back</button>
           <button className="button" onClick={handleUpload}>Click to upload an image</button>
-          <textarea
+          {/* <textarea
             className="textarea is-primary"
             placeholder='Your caption'
             onChange={handleChange}
-            value={inputValue} />
+            value={inputValue} /> */}
           <button className="button" onClick={handleSubmit}>Submit and return</button>
         </div>
         :

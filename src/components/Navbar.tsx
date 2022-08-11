@@ -25,9 +25,9 @@ const Navbar = () => {
             <Link to="/login" className="button is-dark has-text-weight-bold">
               Login
             </Link>
-            <Link to="/register" className="button is-dark has-text-weight-bold">
+            {/* <Link to="/register" className="button is-dark has-text-weight-bold">
               Register
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

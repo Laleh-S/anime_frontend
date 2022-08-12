@@ -23,15 +23,15 @@ function AnimeIndex() {
           return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
             <Link to={`/anime/${anime.id}`}>
               <div className="card has-background-">
-                <div className="card-content">
+                <div className="card-content is-4">
                   <div className="media">
                     <div className="media-content">
-                      <p className="title has-text-centered has-text-dark is-5">{anime.title}</p>
+                      <p className="title4 has-text-weight-semi-bold has-text-centered has-text-dark is-5">{anime.title}</p>
                     </div>
                   </div>
                 </div>
                 <div className="card-image">
-                  <figure className="image is-5by4">
+                  <figure className="image is-4by3">
                     <img src={anime.image} alt={anime.title} />
                   </figure>
                 </div>

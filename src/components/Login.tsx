@@ -30,7 +30,6 @@ export default function Login() {
         user_id: data.user_id,
         token: data.token,
       }
-      console.log('SESSION', session)
       localStorage.setItem('session', JSON.stringify(session))
       navigate('/anime')
     } catch (err: AxiosError | any) {

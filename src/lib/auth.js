@@ -19,5 +19,11 @@ export function isCreator(userIdToCompare) {
 
 export function getToken() {
   const userSession = JSON.parse(localStorage.getItem("session") || "")
+  console.log('SESSION', localStorage.getItem("session") )
+  console.log("GETTOKEN()", userSession)
   return userSession.token
+}
+
+export function isAuthenticated() {
+  return getToken() !== undefined
 }

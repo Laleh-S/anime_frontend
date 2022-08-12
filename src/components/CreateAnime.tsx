@@ -8,17 +8,20 @@ import { BasicAnimeInterface } from "../Interfaces/AnimeInterface"
 import { getToken } from "../lib/auth"
 
 function CreateAnime() {
+  const FIELDS_LABELS_MAPPING: Record<string, string> = {
+    title: 'Title',
+    original_title: 'Original Title',
+    director: 'Director',
+    producer: 'Producer',
+    release_date: 'Release Date',
+    description: 'Description',
+    image: 'Image',
+  }
 
   const navigate = useNavigate()
   
-  const [formData, updateFormData] = useState<BasicAnimeInterface>({
-    title: '',
-    original_title: '',
-    director: '',
-    producer: '',
-    release_date: '',
-    description: '',
-    image: '',
+  const [formData, updateFormData] = useState<BasicAnimeInterface>(() => {
+    return Object.fromEntries(Object.keys(FIELDS_LABELS_MAPPING).map((key)=> [key, ''])) as unknown as BasicAnimeInterface
   })
 
   
@@ -66,10 +69,10 @@ function CreateAnime() {
     <section className="section-create">
       <div className="container">
         <form onSubmit={handleSubmit}>
-          {['Title', 'Original_title', 'Director', 'Producer', 'Release_date', 'Image'].map((field) => {
+          {Object.keys(FIELDS_LABELS_MAPPING).filter((field) => field !== 'description').map((field) => {
             return <div key={field} className="field">
               <label className="label">
-                {field.replace("_", " ")}
+                {FIELDS_LABELS_MAPPING[field]}
               </label>
               <div>
                 <div className="control">

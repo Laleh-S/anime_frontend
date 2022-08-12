@@ -1,8 +1,9 @@
 import React from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { AnimeInterface } from "../Interfaces/AnimeInterface"
-import { isCreator, getLoggedInUserId, getToken } from '../lib/auth'
+import { isCreator, getLoggedInUserId, getToken, isAuthenticated } from '../lib/auth'
 import axios from 'axios'
+import { isAbsolute } from "node:path/win32"
 
 function AnimeShow() {
   const [anime, setAnime] = React.useState<AnimeInterface | undefined>(undefined)
@@ -134,7 +135,7 @@ function AnimeShow() {
                   </article>
                 })}
                 
-                {getLoggedInUserId() && <article className="media"> 
+                {isAuthenticated() && <article className="media"> 
                   <div className="media-content">
                     <div className="field">
                       <p className="control">

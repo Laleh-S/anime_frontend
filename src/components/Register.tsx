@@ -40,7 +40,6 @@ export default function Register() {
 
   async function handleSubmit(e: SyntheticEvent) {
     e.preventDefault()
-
     try {
       await axios.post('/api/register', formData)
       // ! Navigate to the /login page. 

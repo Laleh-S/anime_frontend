@@ -7,11 +7,6 @@
   
 }
 
-// .nav-buttons:hover {
-//   cursor: pointer;
-//   background-color: #ff005f;  
-// }
-
 .button {
   font-family: 'Righteous', cursive;
 }
@@ -35,18 +30,30 @@
   margin: 150px 550px;
   padding-top: 50px;
   padding-bottom: 50px;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .section-register {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 60px 400px;
+}
+
+
+.section-register form {
+  width: 600px;
   border: 2px solid rgb(168, 166, 166);
-  margin: 100px 500px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  border-radius: 10px;
+  border-radius: 15px;
+  padding: 50px;
+}
+
+
+.section-create form{
+  width: 1350px;
+  // border: 2px solid rgb(168, 166, 166);
+  // border-radius: 15px;
+  padding: 50px;
 }
 
 

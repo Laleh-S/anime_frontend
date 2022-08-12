@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { createLogicalOr } from 'typescript'
+// import { createLogicalOr } from 'typescript'
 
 const Navbar = () => {
   return <nav className="navbar" role="navigation" aria-label="main navigation">
@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="navbar-start pr-6">
         <div className="navbar-item">
           <div className="">
-            <div className="level ml-5 mr-5">
+            <div className="level ml-5 mr-5">  
               <p className="text has-text-danger is-size-3">Anime Cue</p>
             </div>
           </div>
@@ -25,9 +25,6 @@ const Navbar = () => {
             <Link to="/login" className="button is-dark has-text-weight-bold">
               Login
             </Link>
-            {/* <Link to="/register" className="button is-dark has-text-weight-bold">
-              Register
-            </Link> */}
           </div>
         </div>
       </div>

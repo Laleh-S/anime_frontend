@@ -22,16 +22,16 @@ function AnimeIndex() {
         {anime.map((anime, index) => {
           return <div key={index} className="column is-one-third-desktop is-half-tablet is-half-mobile">
             <Link to={`/anime/${anime.id}`}>
-              <div className="card has-background-danger">
+              <div className="card has-background-">
                 <div className="card-content">
                   <div className="media">
                     <div className="media-content">
-                      <p className="title has-text-centered has-text-light is-5">{anime.title}</p>
+                      <p className="title has-text-centered has-text-dark is-5">{anime.title}</p>
                     </div>
                   </div>
                 </div>
                 <div className="card-image">
-                  <figure className="image is-4by3">
+                  <figure className="image is-5by4">
                     <img src={anime.image} alt={anime.title} />
                   </figure>
                 </div>

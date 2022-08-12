@@ -8,7 +8,6 @@ export interface BasicAnimeInterface {
   producer: string,
   release_date: string,
   description: string,
-  // url: string,
 }
 
 export interface AnimeInterface extends BasicAnimeInterface {
@@ -16,5 +15,7 @@ export interface AnimeInterface extends BasicAnimeInterface {
   user: any
   comments: [CommentInterface]
 }
+
+
 
 

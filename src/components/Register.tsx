@@ -3,6 +3,7 @@ import React, { SyntheticEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { RegisterInterface } from '../Interfaces/AuthInterfaces'
 
+
 export default function Register() {
   // ! Using react router to navigate
   const navigate = useNavigate()
@@ -57,41 +58,52 @@ export default function Register() {
 
   return <div className="section-register">
     <div className="container">
-      <form className="register-form" onSubmit={handleSubmit}>
-      <p className="text has-text-danger is-size-3">Anime Cue</p>
+    <div className="column is-centered">
+
+    </div>
+      <form className="form" onSubmit={handleSubmit}>
+      <p className="text has-text-danger is-size-4">Anime Cue</p>
     <br/>
+      
         <div className="field">
           <label className="label">Username</label>
-          <div className="control">
+          <div className="control has-icons-right">
             <input
-              className="input is-rounded "
+              className="input is-rounded"
               type="text"
-              name={'username'} 
+              name={'username'}
               // ! Adding these 2 fields means your component is 'controlled'. This is good practice!
               value={formData.username}
               onChange={handleChange}
-            />
-            {/* // ! Really nice custom error messages */}
-            {errors.username && <small className="has-text-danger">{errors.username}</small>}
+            /> 
+            <span className="icon is-right">
+                <i className="fa fa-user"></i>
+            </span> 
+            {errors.username && <small className="has-text-danger">{errors.username}</small>}         
           </div>
         </div>
+
         <div className="field">
           <label className="label">Email</label>
-          <div className="control">
+          <div className="control has-icons-right">
             <input
               className="input is-rounded"
               type="text"
               name={'email'}
+              // ! Adding these 2 fields means your component is 'controlled'. This is good practice!
               value={formData.email}
               onChange={handleChange}
-            />
-            {/* // ! Really nice custom error messages */}
-            {errors.email && <small className="has-text-danger">{errors.email}</small>}
+            /> 
+            <span className="icon is-right">
+                <i className="fa fa-envelope"></i>
+            </span> 
+            {errors.email && <small className="has-text-danger">{errors.email}</small>}         
           </div>
         </div>
+        
         <div className="field">
           <label className="label">Password</label>
-          <div className="control">
+          <div className="control has-icons-right">
             <input
               className="input is-rounded"
               type="password"
@@ -99,13 +111,17 @@ export default function Register() {
               value={formData.password}
               onChange={handleChange}
             />
+            <span className="icon is-right">
+                <i className="fa fa-lock"></i>
+            </span>
             {/* // ! Really nice custom error messages */}
             {errors.password && <small className="has-text-danger">{errors.password}</small>}
           </div>
         </div>
+
         <div className="field">
           <label className="label">Confirm password</label>
-          <div className="control">
+          <div className="control has-icons-right">
             <input
               className="input is-rounded"
               type="password"
@@ -113,11 +129,16 @@ export default function Register() {
               value={formData.passwordConfirmation}
               onChange={handleChange}
             />
-            {/* // ! Really nice custom error messages */}
+            <span className="icon is-right">
+                <i className="fa fa-lock"></i>
+            </span>
+            {/* // custom error messages */}
             {errors.passwordConfirmation && <small className="has-text-danger">{errors.passwordConfirmation}</small>}
           </div>
         </div>
-        <button className="button is-info is-rounded">Register</button>
+        <div className="">
+          <button className="button is-info is-rounded">Register</button>
+        </div>
       </form>
     </div>
   </div>

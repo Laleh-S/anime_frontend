@@ -114,7 +114,6 @@ function AnimeShow() {
                 <p>{anime.description}</p>
                 <br />
                 <p className="creator is-success is-success">Uploaded by: {anime.user.username}</p>
-
                 <hr />
                 
   

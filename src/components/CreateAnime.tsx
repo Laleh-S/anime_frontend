@@ -63,18 +63,18 @@ function CreateAnime() {
 
   return (
     
-    <section className="section">
+    <section className="section-create">
       <div className="container">
         <form onSubmit={handleSubmit}>
-          {['title', 'original_title', 'director', 'producer', 'release_date', 'image'].map((field) => {
+          {['Title', 'Original_title', 'Director', 'Producer', 'Release_date', 'Image'].map((field) => {
             return <div key={field} className="field">
               <label className="label">
-                {field.replace("_", " ").toUpperCase()}
+                {field.replace("_", " ")}
               </label>
               <div>
                 <div className="control">
                   <input
-                    className="input"
+                    className="input "
                     type="text"
                     value={formData[field as keyof BasicAnimeInterface]}
                     onChange={handleChange}

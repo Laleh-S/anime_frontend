@@ -70,7 +70,7 @@ function AnimeShow() {
                 {/* Here we're calling it to check if the anime user ID matches the logged in user ID and if it does you showed the button it doesn't you don't show them.*/}
                 {/* You can do that to show whatever features you want to disable for users who are not the logged in user, you can do it like that. */}
                 {isCreator(anime.user.id) && <button 
-                  className="button is-danger"
+                  className="button is-fullwidth is-danger is-outlined is-half is-mobile "
                   onClick={handleDelete}
                 >
                   Delete Anime
@@ -100,33 +100,30 @@ function AnimeShow() {
                 <p>{anime.producer}</p>
                 <hr />
                 <h4 className="title is-4">
-                  <span role="img" aria-label="globe">
-                  </span>{" "}
+                  {/* <span role="img" aria-label="globe">
+                  </span>{" "} */}
                   Release Date
                 </h4>
                 <p>{anime.release_date}</p>
                 <hr />
 
                 <h4 className="title is-4">
-                  <span role="img" aria-label="globe">
-                  </span>{" "}
+                  {/* <span role="img" aria-label="globe">
+                  </span>{" "} */}
                   Description
                 </h4>
                 <p>{anime.description}</p>
                 <br />
-                <p className="creator is-success is-success">Uploaded by: {anime.user.username}</p>
+                <p className="creator is-success has-text-weight-bold">Uploaded by: {anime.user.username}</p>
                 <hr />
-                
-  
-
                 <br />
                 {anime.comments && anime.comments.map(comment => {
                   return <article key={comment.id} className="media">
                     <div className="media-content">
                       <div className="subtitle is-6 is-success">
-                        <p className="user has-text-info">
-                          
-                          {comment.user.username} <span className="date"> date: </span> 
+                        <p className="user has-text-info is-italic">                          
+                          {comment.user.username} 
+                          <span className="date">,  Date: </span> 
                           {comment.created_at.split("T")[0].split("-").slice(0).reverse().join(" ")}  
                         </p>
                         <p>{comment.content}</p>
@@ -151,10 +148,10 @@ function AnimeShow() {
                     <div className="field">
                       <p className="control">
                         <button
-                          className="button is-info"
+                          className="button is-info is-outlined"
                           onClick={handleComment}
                         >
-                          Suubmit
+                          Comment
                         </button>
                       </p>
                     </div>

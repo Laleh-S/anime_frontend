@@ -8,7 +8,8 @@ const Navbar = () => {
       <div className="navbar-start pr-6">
         <div className="navbar-item">
           <div className="">
-            <div className="level ml-5 mr-5">  
+            <div className="level ml-5 mr-5"> 
+              {/* <img className="logo-vav" src={require ("../assets/head.png")} alt="head"></img>  */}
               <p className="text has-text-danger is-size-3">Anime Cue</p>
             </div>
           </div>

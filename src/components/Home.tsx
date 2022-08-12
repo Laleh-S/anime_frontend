@@ -1,18 +1,3 @@
-// function Home() {
-//   return (
-//     <section className="hero is-fullheight-with-navbar is-warning">
-//       <div className="hero-body">
-//         <div className="container">
-//           <p className="title is-1 has-text-centered has-text-black">
-//             Home
-//           </p>
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
-
-// export default Home
 
 
 function Home() {
@@ -42,15 +27,3 @@ export default Home
 
 
 
-{/* <section className="section">
-      <div className="container">
-        {anime ? (
-          <div>
-            <h3 className="title has-text-centered">{anime.title}</h3>
-            <hr />
-            <div className="columns">
-              <div className="column is-half">
-                <figure className="image">
-                  <img src={anime.image} alt={anime.title} />
-                  <br />
-                </figure> */}

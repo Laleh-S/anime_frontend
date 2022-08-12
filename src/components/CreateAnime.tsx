@@ -69,9 +69,10 @@ function CreateAnime() {
     <section className="section-create">
       <div className="container">
         <form onSubmit={handleSubmit}>
+        <p className="text has-text-danger is-size-3 pb-5">Anime Cue</p>
           {Object.keys(FIELDS_LABELS_MAPPING).filter((field) => field !== 'description').map((field) => {
             return <div key={field} className="field">
-              <label className="label">
+              <label className="form-create">
                 {FIELDS_LABELS_MAPPING[field]}
               </label>
               <div>
@@ -82,12 +83,13 @@ function CreateAnime() {
                     value={formData[field as keyof BasicAnimeInterface]}
                     onChange={handleChange}
                     name={field}
+                    // placeholder={field}
                   />
                 </div>  
               </div>   
             </div>    
           })}
-            <div className="text has-text-weight-bold">
+            <div className="form">
               <p> Description</p>
               <textarea
               className="textarea mt-3 has-text-weight-bold"

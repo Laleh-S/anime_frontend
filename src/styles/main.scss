@@ -22,6 +22,8 @@
   transform: translate3D(0, -6px, 0);
 }
 
+
+
 .section-login {
   display: flex;
   flex-direction: column;
@@ -50,10 +52,15 @@
 
 
 .section-create form{
-  width: 1350px;
-  // border: 2px solid rgb(168, 166, 166);
-  // border-radius: 15px;
-  padding: 50px;
+  width: 1250px;
+  border: 2px solid rgb(168, 166, 166);
+  border-radius: 15px;
+  padding: 40px;
+  margin: 40px;
+}
+
+.form-create {
+  width: 1000px;
 }
 
 

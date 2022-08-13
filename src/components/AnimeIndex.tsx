@@ -2,13 +2,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { AnimeInterface } from '../Interfaces/AnimeInterface'
+import { baseUrl } from '../config.js'
 
 function AnimeIndex() {
   const [anime, setAnime] = React.useState < Array < AnimeInterface >> ([])
 
   React.useEffect(() => {
     const getData = async () => {
-      const res = await fetch('/api/animes')
+      const res = await fetch(`${baseUrl}/animes`)
       const json = await res.json()
       console.log(json)
       setAnime(json)

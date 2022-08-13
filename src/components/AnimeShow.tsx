@@ -4,6 +4,7 @@ import { AnimeInterface } from "../Interfaces/AnimeInterface"
 import { isCreator, getLoggedInUserId, getToken, isAuthenticated } from '../lib/auth'
 import axios from 'axios'
 import { isAbsolute } from "node:path/win32"
+import { baseUrl } from '../config.js'
 
 function AnimeShow() {
   const [anime, setAnime] = React.useState<AnimeInterface | undefined>(undefined)
@@ -16,7 +17,7 @@ function AnimeShow() {
   }, [animeId])
 
   async function loadAnime() {
-    await fetch(`/api/animes/${animeId}`)
+    await fetch(`${baseUrl}/animes/${animeId}`)
     .then(resp => resp.json())
     .then((data: AnimeInterface) => {
       setAnime(data)
@@ -25,7 +26,7 @@ function AnimeShow() {
 
   async function handleDelete() {
     try {
-      await axios.delete(`/api/animes/${animeId}`, { // First argument is the URL
+      await axios.delete(`${baseUrl}/animes/${animeId}`, { // First argument is the URL
         // With Delete and Get you can't post information, so there are only two arguments
         headers: { Authorization: `Bearer ${getToken()}` }, // Second argument is any headers or options.
       })
@@ -38,7 +39,7 @@ function AnimeShow() {
   async function handleComment() {
     try {
       const { data } = await axios.post(
-        `/api/animes/${animeId}/comments`, // First argument is the URL
+        `${baseUrl}/animes/${animeId}/comments`, // First argument is the URL
         // Below we are going to take the text inside of the comentContent and stick it in the content.
         { content: commentContent }, // IMPORTANT: When posting in axios the second argument is an object the thing you are posting. 
         {

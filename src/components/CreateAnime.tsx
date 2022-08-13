@@ -6,6 +6,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom"
 import { BasicAnimeInterface } from "../Interfaces/AnimeInterface"
 import { getToken } from "../lib/auth"
+import { baseUrl } from '../config.js'
 
 function CreateAnime() {
   const FIELDS_LABELS_MAPPING: Record<string, string> = {
@@ -43,7 +44,7 @@ function CreateAnime() {
     console.log('FORM DATA', formData)
     try {
       const { data } = await axios.post(
-        '/api/animes', 
+        `${baseUrl}/animes`, 
         mutableFormData,
         {
         headers: { 

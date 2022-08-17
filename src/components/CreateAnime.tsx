@@ -1,6 +1,5 @@
 
-import Select, { GroupBase } from 'react-select'
-import React, { SyntheticEvent, useState , useEffect } from "react"
+import React, { SyntheticEvent, useState } from "react"
 
 import axios from 'axios'
 import { useNavigate } from "react-router-dom"

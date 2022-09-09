@@ -28,10 +28,10 @@ Once you've got your Frontend talking to your Backend, time to add some features
 2. Create a `ShowPokemon` (equivalent) component, so that when you click on a card it takes you to the ShowPokemon page that just shows a single pokemon. 
 
 ## Brilef
-Build a full-stack application 
-Using Python and React
-CRUD Functionality
-Visually impressive design 
+- Build a full-stack CRUD application 
+- Use Python and React
+- Visually mpressive design 
+Must be deployed online and accessible to the public
 by making your own backend and your own front-end Use a Python Flask API using a Flask REST Framework to serve your data from a Postgres database Consume your API with a separate front-end built with React Be a complete product which most likely means multiple relationships and CRUD functionality for at least a couple of models Implement thoughtful user stories/wireframes that are significant enough to help you know which features are core MVP and which you can cut Have a visually impressive design to kick your portfolio up a notch and have something to wow future clients & employers. ALLOW time for this. Be deployed online so it's publicly accessible.
 
 

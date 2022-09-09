@@ -58,9 +58,16 @@ class animeModel(db.Model, BaseModel):
 ````
 <img width="1362" alt="Screen Shot 2022-09-09 at 17 58 11" src="https://user-images.githubusercontent.com/92860992/189392372-e7a5f126-69c1-4ec0-928f-aa9e34bbfa5b.png">
 
-## Front-End
+## Project Screenshots
 #### Homepage
 <img width="1436" alt="Screen Shot 2022-09-09 at 18 41 01" src="https://user-images.githubusercontent.com/92860992/189399811-698251cd-3541-4bee-bd7c-59d49b106904.png">
+
+#### Anime Index Page
+<img width="755" alt="Screen Shot 2022-09-09 at 19 30 17" src="https://user-images.githubusercontent.com/92860992/189417802-292d3203-8e84-4ed6-ba39-a2e165b13c2f.png">
+
+#### Anime Show Page 
+<img width="988" alt="Screen Shot 2022-09-09 at 19 29 25" src="https://user-images.githubusercontent.com/92860992/189417854-2110ce40-2035-4909-82f6-1a7c3255aa77.png">
+
 
 ## Bugs
 Due to the issues with my back-end environment folder which has to do with the way I use PostgreSQL (database driver), the ability to register or login is disabled on the deployed version. The login and registration is only possible locally. 

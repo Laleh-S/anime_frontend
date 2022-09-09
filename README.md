@@ -1,6 +1,3 @@
-
-
-
 # Anime Cue
 
 Link to Project https://anime-cue.netlify.app/

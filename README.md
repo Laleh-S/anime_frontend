@@ -27,7 +27,7 @@ Once you've got your Frontend talking to your Backend, time to add some features
 1. Add a `Navbar` so that you can navigate, and hook up both the `/` and `/pokemon` (equivalent) routes so that you can move between a home page and an index page. Your index page should show a list of nice cards.
 2. Create a `ShowPokemon` (equivalent) component, so that when you click on a card it takes you to the ShowPokemon page that just shows a single pokemon. 
 
-## Brilef
+## Requirements
 - Build a full-stack CRUD application 
 - Use Python and React
 - Visually mpressive design 

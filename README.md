@@ -32,13 +32,13 @@ I started off with planning and whiteboarding of the functions and the features 
 
 **Creating a database diagram**
 
-<img width="800" alt="Screen Shot 2022-09-09 at 17 09 17" src="https://user-images.githubusercontent.com/92860992/189382948-009e4e7f-0071-46a9-b61d-a2b10d785c72.png">
+<img width="1358" alt="Screen Shot 2022-09-09 at 17 35 41" src="https://user-images.githubusercontent.com/92860992/189388060-dd429bbd-1059-44d6-a27a-cf3087f70ce7.png">
+
 
 
 ## Timeline
-**Day 1- 2**
-
-Mindmapping, planning, whiteboarding, creating a databse diagram.
+- **Day 1- 2: Mindmapping, planning, whiteboarding, creating a databse diagram.**
+- **Join and 
 
 
 

@@ -75,6 +75,12 @@ Due to the issues with my back-end environment folder which has to do with the w
 ## Challenges
 The main challenge in this project for me was doing the front-end in TypeScript after only learning it for a couple of days. Majority of the time I spent on the front-end was figuring out and learning how to get things done in TypeScript. I therefore did not have enough time to reach my stretch goals.
 
+## Future Development
+- Fix the issue with the back-end environment
+- Error handling for the login, signup and create anime page
+- Add the functionality to allow the users to contact each other
+- Implement mobile version
+- Implement the genre 
 
 
 

@@ -35,10 +35,7 @@ I started off with planning and whiteboarding of the functions and the features 
 <img width="1358" alt="Screen Shot 2022-09-09 at 17 35 41" src="https://user-images.githubusercontent.com/92860992/189388060-dd429bbd-1059-44d6-a27a-cf3087f70ce7.png">
 
 
-
-## Timeline
-- **Day 1- 2: Mindmapping, planning, whiteboarding, creating a databse diagram.**
-- **Join and 
+## Creating the Back-end
 
 
 

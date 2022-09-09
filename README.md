@@ -63,13 +63,11 @@ class animeModel(db.Model, BaseModel):
 <img width="1436" alt="Screen Shot 2022-09-09 at 18 41 01" src="https://user-images.githubusercontent.com/92860992/189399811-698251cd-3541-4bee-bd7c-59d49b106904.png">
 
 ## Bugs
-Due to the issues with my back-end environment folder which has to do with the way I use PostgreSQL, the ability to register or login is disabled on the deployed version. The login and registration is only possible locally. 
+Due to the issues with my back-end environment folder which has to do with the way I use PostgreSQL (database driver), the ability to register or login is disabled on the deployed version. The login and registration is only possible locally. 
 
 ## Challenges
 The main challenge in this project for me was doing the front-end in TypeScript after only learning it for a couple of days. Majority of the time I spent on the front-end was figuring out and learning how to get things done in TypeScript. I therefore did not have enough time to reach my stretch goals.
 
-## Future Development
-- Fix the issues with the deployed versio
-- Implement mobile version
+
 
 

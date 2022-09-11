@@ -88,8 +88,8 @@ class animeModel(db.Model, BaseModel):
 
   user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete='CASCADE'), nullable=False)
 # Letting flask-sqlalchemy know about my new table for tea_note
-    # This is similar to relatinonship for comments, but we tell 
-    # it about the JOIN TABLE.
+    # This is similar to relationship for comments, but we tell 
+    # it is about the JOIN TABLE.
   genres = db.relationship('GenreModel', backref='genres', secondary=anime_genre)
   comments = db.relationship('CommentModel', backref='comments', cascade="all, delete")
 

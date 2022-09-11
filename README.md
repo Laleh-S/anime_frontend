@@ -36,7 +36,7 @@ I have also created a database relationship diagram.
 
 
 ## Back-End
-I started by creating a database model using PostgreSQL. I then created the base model with all the common fields that all my models will have. I then seeded my database with anime data.
+I started by creating a database using PostgreSQL. I then created the base model with all the common fields that all my models will have. 
 ````
 class animeModel(db.Model, BaseModel):
 
@@ -56,6 +56,46 @@ class animeModel(db.Model, BaseModel):
 
   user = db.relationship('UserModel', backref='users')
 ````
+
+
+I then seeded my database with anime data. Here is my Anime table, it extends the db.Model and the BaseModel.
+````
+
+from app import db
+from models.base import BaseModel
+
+from models.anime_genre import anime_genre
+from models.genre import GenreModel
+from models.comment import CommentModel
+from models.user import UserModel
+
+
+
+# AnimeModel EXTENDS BaseModel and db.Model. Extending db.Model lets Flask-SQLAlchemy KNOW about our model, so it can use it.
+class animeModel(db.Model, BaseModel):
+
+  # This will be used DIRECTLY to make a TABLE in Postgresql
+  __tablename__ = "animes"
+
+  # Specific columns for our Anime Table.
+  title = db.Column(db.Text, nullable=False, unique=True)
+  original_title = db.Column(db.Text, nullable=False)
+  image = db.Column(db.Text, nullable=False)
+  director = db.Column(db.Text, nullable=False)
+  producer = db.Column(db.Text, nullable=False)
+  release_date = db.Column(db.Integer, nullable=False)
+  description = db.Column(db.Text, nullable=False)
+
+  user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete='CASCADE'), nullable=False)
+# Letting flask-sqlalchemy know about my new table for tea_note
+    # This is similar to relatinonship for comments, but we tell 
+    # it about the JOIN TABLE.
+  genres = db.relationship('GenreModel', backref='genres', secondary=anime_genre)
+  comments = db.relationship('CommentModel', backref='comments', cascade="all, delete")
+
+  user = db.relationship('UserModel', backref='users')
+````
+
 <img width="1362" alt="Screen Shot 2022-09-09 at 17 58 11" src="https://user-images.githubusercontent.com/92860992/189392372-e7a5f126-69c1-4ec0-928f-aa9e34bbfa5b.png">
 
 ## Project Screenshots
@@ -75,12 +115,20 @@ Due to the issues with my back-end environment folder which has to do with the w
 ## Challenges
 The main challenge in this project for me was doing the front-end in TypeScript after only learning it for a couple of days. Majority of the time I spent on the front-end was figuring out and learning how to get things done in TypeScript. I therefore did not have enough time to reach my stretch goals.
 
+
+## Wins
+- Being able to create a functioning and responsive site
+- Being able to get TypeScript work at the front-end
+
+
 ## Future Development
 - Fix the issue with the back-end environment
 - Error handling for the login, signup and create anime page
 - Add the functionality to allow the users to contact each other
 - Implement mobile version
-- Display genre relationship 
+- Add functionality for editing comments
+
+
 
 
 

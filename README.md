@@ -80,7 +80,7 @@ The main challenge in this project for me was doing the front-end in TypeScript 
 - Error handling for the login, signup and create anime page
 - Add the functionality to allow the users to contact each other
 - Implement mobile version
-- Implement the genre 
+- Display genre relationship 
 
 
 

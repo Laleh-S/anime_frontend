@@ -160,6 +160,24 @@ function App() {
 export default App
 ````
 
+**Register Page**
+
+Here I put the form fields in state because the state will change after the user fills the form and I pass in register interfaces which I created in the interfaces folder. I then created a handle change and the handle submit function to my register form.
+
+````
+  const [formData, setFormData] = useState<RegisterInterface>({
+    username: "",
+    password: "",
+    passwordConfirmation: "",
+    email: "",
+  })
+
+````
+<img width="705" alt="Screen Shot 2022-09-13 at 14 00 01" src="https://user-images.githubusercontent.com/92860992/189895462-4346b9c0-f3a0-4c0f-a3fe-884a07f0781b.png">
+
+
+
+
 
 ## Project Screenshots
 #### Homepage

@@ -250,7 +250,7 @@ The main challenge in this project for me was doing the front-end in TypeScript 
 - Add functionality for editing comments
 
 ## Key Learning
-
+I learned the importance of time management. If you don't stick to your plans the rest of the project will suffer. I had planned to finish the backend in one week and left the front end and styling for the second week. Because I chose TypeScript for the front end I had encountered many problems that I did not expect to have. Having said that, this project forced me to learn TypeScript. I found using Interfaces very helpful in creating a very clean, easy and readable code.
 
 
 

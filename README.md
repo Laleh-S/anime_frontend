@@ -91,9 +91,52 @@ class animeModel(db.Model, BaseModel):
   user = db.relationship('UserModel', backref='users')
 ````
 
+
 This is the screeshot of my anime table craeted using "table plus"
 
 <img width="1362" alt="Screen Shot 2022-09-09 at 17 58 11" src="https://user-images.githubusercontent.com/92860992/189392372-e7a5f126-69c1-4ec0-928f-aa9e34bbfa5b.png">
+
+
+Once I finished with the above I started working on controllers and secure routes. Here I did steps such as validating my token, checking to see if the token exists, removing the bearer from the token and decoding it and getting the user information from the token. Also setting the current user as a global variable, so I can access it inside my controllers.
+
+````
+def secure_route(route_func):
+    @wraps(route_func)
+    def decorated_function(*args, **kwargs):
+    
+        raw_token = request.headers.get("Authorization")
+        print("TOKEN", raw_token)
+        print("HEADERS", request.headers)
+        if not raw_token:
+            return {"message": "Unauthorized"}, HTTPStatus.UNAUTHORIZED
+        clean_token = raw_token.replace("Bearer ", "")
+
+        try:
+            payload = jwt.decode(clean_token, secret, "HS256")
+          
+            user_id = payload["sub"]
+          
+            user = UserModel.query.get(user_id)
+
+            if not user:
+                return {"message": "Unauthorized"}, HTTPStatus.UNAUTHORIZED
+
+            g.current_user = user
+            
+        except jwt.ExpiredSignatureError:
+            return {"message": "Token has expired"}, HTTPStatus.UNAUTHORIZED
+
+        except Exception as e:
+            return {"message": "Unauthorized"}, HTTPStatus.UNAUTHORIZED
+
+        return route_func(*args, **kwargs)
+
+    return decorated_function
+````
+
+
+## Front-End
+
 
 ## Project Screenshots
 #### Homepage

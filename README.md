@@ -137,7 +137,7 @@ def secure_route(route_func):
 
 ## Front-End
 
-Because I was working solo and spent more than I had palnned on the backend, I decided to keep the front-end simple so I would meet the deadline on time.
+Because I was working solo and spent more than I had planned on the backend, I decided to keep the front-end simple so I would meet the deadline on time.
 For the front-end alongside React I decided to use TypeScript instead of JavaScript. I started by creating all the different components as well as a Navbar. I then added all my routes inside of the App.js file.
 
 ````

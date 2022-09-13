@@ -92,7 +92,7 @@ class animeModel(db.Model, BaseModel):
 ````
 
 
-This is the screeshot of my anime table craeted using "table plus"
+This is the screenshot of my anime table created using "table plus"
 
 <img width="1362" alt="Screen Shot 2022-09-09 at 17 58 11" src="https://user-images.githubusercontent.com/92860992/189392372-e7a5f126-69c1-4ec0-928f-aa9e34bbfa5b.png">
 

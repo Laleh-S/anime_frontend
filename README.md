@@ -58,7 +58,7 @@ class animeModel(db.Model, BaseModel):
 ````
 
 
-I then seeded my database with anime data. Here is my Anime table, it extends the db.Model and the BaseModel.
+I then seeded my database with anime data. Here is my Anime table, it extends the db.Model and the BaseModel. By extending db.Model Flask-SQLAlchemy knows  about my model, so it can use it.  **__tablename__ = "animes"** used directly to create a TABLE in Postgresql. Here I used specific columns for my Anime Table.
 ````
 
 from app import db
@@ -70,14 +70,11 @@ from models.comment import CommentModel
 from models.user import UserModel
 
 
-
-# AnimeModel EXTENDS BaseModel and db.Model. Extending db.Model lets Flask-SQLAlchemy KNOW about our model, so it can use it.
 class animeModel(db.Model, BaseModel):
 
-  # This will be used DIRECTLY to make a TABLE in Postgresql
   __tablename__ = "animes"
 
-  # Specific columns for our Anime Table.
+  
   title = db.Column(db.Text, nullable=False, unique=True)
   original_title = db.Column(db.Text, nullable=False)
   image = db.Column(db.Text, nullable=False)
@@ -87,9 +84,7 @@ class animeModel(db.Model, BaseModel):
   description = db.Column(db.Text, nullable=False)
 
   user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete='CASCADE'), nullable=False)
-# Letting flask-sqlalchemy know about my new table for tea_note
-    # This is similar to relationship for comments, but we tell 
-    # it is about the JOIN TABLE.
+ 
   genres = db.relationship('GenreModel', backref='genres', secondary=anime_genre)
   comments = db.relationship('CommentModel', backref='comments', cascade="all, delete")
 

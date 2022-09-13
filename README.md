@@ -199,7 +199,7 @@ The main challenge in this project for me was doing the front-end in TypeScript 
 
 ## Wins
 - Being able to create a functioning and responsive site
-- Being able to get TypeScript work at the front-end
+- Being able to get TypeScript work at the front-end after only learning it for a couple of days
 
 
 ## Future Development
@@ -208,6 +208,9 @@ The main challenge in this project for me was doing the front-end in TypeScript 
 - Add the functionality to allow the users to contact each other
 - Implement mobile version
 - Add functionality for editing comments
+
+## Key Learning
+
 
 
 

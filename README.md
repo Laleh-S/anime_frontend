@@ -160,6 +160,7 @@ function App() {
 export default App
 ````
 **Interfaces**
+
 I created different interfaces for my Animes, Authentications, Comments and users. I then imported these interfaces inside my components and used them.
 
 <img width="1436" alt="Screen Shot 2022-09-13 at 14 12 28" src="https://user-images.githubusercontent.com/92860992/189899399-252cad3a-9bf5-41b9-9699-f364f7d4a8bf.png">

@@ -165,7 +165,7 @@ I created different interfaces for my Animes, Authentications, Comments and user
 
 <img width="1436" alt="Screen Shot 2022-09-13 at 14 12 28" src="https://user-images.githubusercontent.com/92860992/189899399-252cad3a-9bf5-41b9-9699-f364f7d4a8bf.png">
 
-**Register Page**
+**Register**
 
 Here I put the form fields in state because the state will change after the user fills the form and I pass in register interfaces which I created in the interfaces folder. I then created a handle change and the handle submit function to my register form.
 
@@ -181,10 +181,43 @@ Here I put the form fields in state because the state will change after the user
 <img width="705" alt="Screen Shot 2022-09-13 at 14 00 01" src="https://user-images.githubusercontent.com/92860992/189895462-4346b9c0-f3a0-4c0f-a3fe-884a07f0781b.png">
 
 
+**Anime Show**
 
+For this page as well as adding information about the specific anime, I have added two features: delete button and comment section. The delete button is only visible and available for the person who created the anime. The function takes only two arguments, because with delete we cannot post information.
 
+````
+  async function handleDelete() {
+    try {
+      await axios.delete(`${baseUrl}/animes/${animeId}`, { 
+        headers: { Authorization: `Bearer ${getToken()}` }, 
+      })
+      navigate('/anime')
+    } catch (e) {
+      console.log(e)
+    }
+  }
+````
 
+ 
+The comment section is visible and available for all the users to make comments. 
 
+````
+async function handleComment() {
+    try {
+      const { data } = await axios.post(
+        `${baseUrl}/animes/${animeId}/comments`, 
+        { content: commentContent }, 
+        {
+          headers: { Authorization: `Bearer ${getToken()}` }, 
+        }
+      )
+      loadAnime()
+    } catch (e) {
+      console.log(e)
+    }
+  }
+````
+<img width="988" alt="Screen Shot 2022-09-09 at 19 29 25" src="https://user-images.githubusercontent.com/92860992/189417854-2110ce40-2035-4909-82f6-1a7c3255aa77.png">
 
 
 ## Project Screenshots
@@ -194,8 +227,7 @@ Here I put the form fields in state because the state will change after the user
 #### Anime Index Page
 <img width="755" alt="Screen Shot 2022-09-09 at 19 30 17" src="https://user-images.githubusercontent.com/92860992/189417802-292d3203-8e84-4ed6-ba39-a2e165b13c2f.png">
 
-#### Anime Show Page 
-<img width="988" alt="Screen Shot 2022-09-09 at 19 29 25" src="https://user-images.githubusercontent.com/92860992/189417854-2110ce40-2035-4909-82f6-1a7c3255aa77.png">
+
 
 
 ## Bugs

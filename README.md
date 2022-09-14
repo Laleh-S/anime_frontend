@@ -58,7 +58,7 @@ class animeModel(db.Model, BaseModel):
 ````
 
 
-I then seeded my database with anime data. Here is my Anime table, it extends the db.Model and the BaseModel. By extending db.Model Flask-SQLAlchemy knows  about my model, so it can use it.  **__tablename__ = "animes"** used directly to create a TABLE in Postgresql. Here I used specific columns for my Anime Table.
+I then seeded my database with anime data. Here is my Anime table, it extends the db.Model and the BaseModel. By extending db.Model Flask-SQLAlchemy knows  about my model, so it can use it.  **__tablename__ = "animes"** used directly to create a TABLE in PostgreSQL. Here I used specific columns for my Anime Table.
 ````
 
 from app import db

@@ -234,7 +234,7 @@ async function handleComment() {
 Due to the issues with my back-end environment folder which has to do with the way I use PostgreSQL (database driver), the ability to register or login is disabled on the deployed version. The login and registration is only possible locally. 
 
 ## Challenges
-The main challenge in this project for me was doing the front-end in TypeScript after only learning it for a couple of days. Majority of the time I spent on the front-end was figuring out and learning how to get things done in TypeScript. I therefore did not have enough time to reach my stretch goals.
+The main challenge in this project for me was doing the front-end in TypeScript after only learning it for a couple of days. The majority of the time I spent on the front-end was figuring out and learning how to get things done in TypeScript. I therefore did not have enough time to reach my stretch goals.
 
 
 ## Wins

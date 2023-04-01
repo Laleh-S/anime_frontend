@@ -2,7 +2,7 @@ import React, { SyntheticEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios, {AxiosError} from 'axios'
 import { LoginInterface, UserSessionInterface } from '../Interfaces/AuthInterfaces'
-import { Interface } from 'readline'
+import { baseUrl } from '../config.js'
 
 export default function Login() {
 
@@ -25,7 +25,7 @@ export default function Login() {
     e.preventDefault()
 
     try {
-      const { data } = await axios.post('/api/login', formData)
+      const { data } = await axios.post(`${baseUrl}/login`, formData)
       const session: UserSessionInterface = {
         user_id: data.user_id,
         token: data.token,

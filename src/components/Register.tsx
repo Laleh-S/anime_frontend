@@ -2,6 +2,7 @@ import axios, { AxiosError } from 'axios'
 import React, { SyntheticEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { RegisterInterface } from '../Interfaces/AuthInterfaces'
+import { baseUrl } from '../config.js'
 
 
 export default function Register() {
@@ -41,7 +42,7 @@ export default function Register() {
   async function handleSubmit(e: SyntheticEvent) {
     e.preventDefault()
     try {
-      await axios.post('/api/register', formData)
+      await axios.post(`${baseUrl}/register`, formData)
       // ! Navigate to the /login page. 
       navigate('/login')
 

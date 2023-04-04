@@ -1,6 +1,8 @@
 # Anime Cue
 
 Link to Project https://anime-cue.netlify.app/
+Login Credentials:
+
 
 ## Overview
 This is the site for Anime lovers to visit and talk and comment about different anime films as well as uploading their own favourite anime. The assignment was to be completed solo within two weeks over a total of 6 working days.
